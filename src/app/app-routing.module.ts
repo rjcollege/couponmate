@@ -11,6 +11,14 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginComponentModule)
   },
   {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterComponentModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordComponentModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'

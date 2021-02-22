@@ -27,8 +27,8 @@
             <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
           </div>
           <div class="bottom">
-          <span class="forgot_pass" style="padding-left: 2%" >Register as a new User</span>
-          <span class="forgot_pass" style="padding-left: 8%">Forgot Password?</span>
+          <span class="forgot_pass" style="padding-left: 2%" (click)="goToRegister()">Register as a new User</span>
+          <span class="forgot_pass" style="padding-left: 8%" (click)="goToForgotpwd()">Forgot Password?</span>
           </div>
         </ion-col>
       </ion-row>
