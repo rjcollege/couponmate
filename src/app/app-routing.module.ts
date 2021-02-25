@@ -19,6 +19,14 @@ const routes: Routes = [
     loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordComponentModule)
   },
   {
+    path: 'product-list',
+    loadChildren: () => import('./product-list/product-list-routing.module').then( m => m.ProductListPageRoutingModule)
+  },
+  {
+    path: 'category',
+    loadChildren: () => import('./sidemenu/sidemenu-routing.module').then( m => m.SidemenuPageRoutingModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
