@@ -17,4 +17,7 @@ export class HomePage {
     this.route.navigate(['/category']);
   }
  
+  gotoBeauty(){
+    this.route.navigate(['/beauty']);
+  }
 }

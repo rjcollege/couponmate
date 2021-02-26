@@ -1,0 +1,37 @@
+.back{
+  color:white;
+}
+.header{
+  --background: #ec3237 !important;
+}
+.pt-4{
+  padding-top: 4% !important;
+}
+.desc{
+  padding: 3%;
+  font-size: smaller;
+}
+.desc-title{
+  font-weight: 700;
+}
+.segment-card {
+  display: flex;
+  overflow-x: scroll;
+  border: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-style: none !important;
+  // margin: 10px 0%;
+  border-radius: 0px;
+  .segment-item {
+      display: inline-block !important;
+      min-width: 100px !important;
+      width: auto !important;
+      background: blue;
+      color:white;
+  }
+  .segment-item1{
+    background: green;
+    color:white;
+  }
+}

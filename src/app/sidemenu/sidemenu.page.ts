@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidemenu',
@@ -8,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidemenuPage implements OnInit {
  
-  constructor() { 
+  constructor(private route:Router) { 
     
   }
 
   ngOnInit() {
     
   }
- 
- 
+  gotToBeauty(){
+    this.route.navigate(['/beauty']);
+  }
+  gotToBack(){
+    this.route.navigate(['/home']);
+  }
 }

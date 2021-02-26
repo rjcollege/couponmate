@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
+      <ion-back-button defaultHref="/home" class="back" (click)="gotToBack()"></ion-back-button>
     </ion-buttons>
     <ion-title>Categories</ion-title>
   </ion-toolbar>
@@ -12,7 +12,7 @@
     <ion-col col-4>
 <!-- <ion-card class="card"> -->
   <div class="category">
-  <img src="assets/icon/beauty.jpg"/>
+  <img src="assets/icon/beauty.jpg" (click)="gotToBeauty()">
   <ion-card-content>
     <ion-card-title class="title">
       Beuaty,Spa & Massage

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/category" class="back"  (click)="gotoHome()"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="padding-left: initial" class="back">Beauty Spa & Massage
+     &nbsp;&nbsp;&nbsp; <ion-icon name="cart" style="padding-top: 2%;"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<h5 class="pd-3">Shop By Categories</h5>
+  <ion-content class="card-background-page">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <div class="container">
+            <img src="assets/icon/jwellery.jpg" alt="Snow" style="width:100%;">
+            <div class="centered">Jwellery & Watches</div>
+          </div>
+    </ion-col>
+      <ion-col col-4>
+        <div class="container">
+          <img src="assets/icon/jwellery.jpg" alt="Snow" style="width:100%;">
+          <div class="centered">Spa & Massage</div>
+        </div>
+  </ion-col>
+    <ion-col col-4>
+      <div class="container">
+        <img src="assets/icon/jwellery.jpg" alt="Snow" style="width:100%;">
+        <div class="centered">Salon & Products</div>
+      </div>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-img src="assets/icon/banner1.jpg" class="pt-2"></ion-img>
+  <ion-grid class="tile">
+    <ion-row>
+      <ion-col col-6>
+  <ion-card class="card" (click)="gotoList()">
+    <img src="assets/icon/facemask.jpg"/>
+    <ion-card-content>
+      <ion-card-title class="title">
+        Face Mask
+        </ion-card-title>
+      <p class="cost">
+        $8.00
+      </p>
+      <p>
+        <ion-icon name="cart-outline" class="icons"></ion-icon>
+        <ion-icon name="heart-outline" class="icons"></ion-icon>
+        <ion-icon name="reorder-two-outline" class="icons"></ion-icon>
+        <ion-icon name="eye-outline" class="icons"></ion-icon>
+      </p>
+    </ion-card-content>
+  </ion-card>
+  </ion-col>
+  <ion-col col-6>
+  <ion-card class="card">
+    <img src="assets/icon/earrings.jpg"/>
+    <ion-card-content>
+      <ion-card-title class="title">
+       Earrings
+        </ion-card-title>
+      <p class="cost">
+        $8.00
+      </p>
+      <p>
+        <ion-icon name="cart-outline" class="icons"></ion-icon>
+        <ion-icon name="heart-outline" class="icons"></ion-icon>
+        <ion-icon name="reorder-two-outline" class="icons"></ion-icon>
+        <ion-icon name="eye-outline" class="icons"></ion-icon>
+      </p>
+    </ion-card-content>
+  </ion-card>
+  </ion-col>
+  </ion-row>
+  
+  </ion-grid>
+</ion-content>

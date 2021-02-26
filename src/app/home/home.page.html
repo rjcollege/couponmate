@@ -15,9 +15,9 @@
   </ion-toolbar>
   <ion-searchbar></ion-searchbar>
 
-  <ion-card no-padding no-margin class="no-border-radius segment-card">
+  <ion-card no-padding no-margin class="no-border-radius segment-card" (click)="gotToCat()">
     <ion-tab-button class="segment-item" tab="category">
-      <ion-icon name="reorder-three-outline" (click)="gotToCat()"></ion-icon>
+      <ion-icon name="reorder-three-outline" ></ion-icon>
         <ion-label>Categories</ion-label>
     </ion-tab-button>
     <ion-tab-button class="segment-item" tab="contact">
@@ -50,7 +50,7 @@
       <ion-img src="assets/icon/elec.jpg"></ion-img>
     </ion-slide>
   </ion-slides>
-  <ion-img src="assets/icon/banner1.jpg" class="pt-2"></ion-img>
+  <ion-img src="assets/icon/banner1.jpg" class="pt-2" (click)="gotoBeauty()"></ion-img>
 <ion-img src="assets/icon/banner2.jpg"  class="pt-2"></ion-img>
 </ion-content>
 

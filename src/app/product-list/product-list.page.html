@@ -1,17 +1,16 @@
 <ion-header class="header">
   <ion-toolbar>
-      <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-    <ion-title>
-      Product List
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" class="back" (click)="gotoBack()" style="color: white;"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="padding-left: initial" class="back">Product List
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-grid class="tile">
   <ion-row>
     <ion-col col-6>
-<ion-card class="card">
+<ion-card class="card" (click)="gotoDetails()">
   <img src="assets/icon/chmois.jpg"/>
   <ion-card-content>
     <ion-card-title class="title">

@@ -28,9 +28,18 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
+  {
+    path: 'beauty',
+    loadChildren: () => import('./beauty/beauty-routing.module').then( m => m.BeautyPageRoutingModule)
+  },
+  {
+    path: 'product-details',
+    loadChildren: () => import('./product-details/product-details-routing.module').then( m => m.ProductDetailsPageRoutingModule)
+  },
+
 ];
 
 @NgModule({

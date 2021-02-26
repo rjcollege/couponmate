@@ -1,9 +1,61 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>product-details</ion-title>
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/product-list" class="back" (click)="gotoList()"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="padding-left: initial" class="back">Product Details
+     &nbsp;&nbsp;&nbsp; <ion-icon name="cart" style="padding-top: 2%;"></ion-icon>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+  <ion-content >
+    <ion-slides pager="true" [options]="slideOpts" class="pt-4">
+      <ion-slide>
+        <ion-img src="assets/icon/chmois.jpg"></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="assets/icon/chmois.jpg"></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="assets/icon/chmois.jpg"></ion-img>
+      </ion-slide>
+    </ion-slides>
+   <h4 style="text-align: center;">Wax On Wax</h4>
+   <h5 style="text-align: center;
+   color: gray;
+   font-weight: 700">$5.00</h5>
+  <div class="desc">
+    <p class="desc-title">PRODUCT DESCRIPTION:</p>
+    <p>
+    <b>Color:</b> Red<br>
+<b>Approx. Size: </b>19.5 (measures from the inner side) x 9cm/7.7 x 3.5" (L&Max.W)<br>
+<b>Flower Size: </b>13cm x 12cm /5.1 x 4.7"<br><br>
 
+Perfect for masquerade ball, evening party, wedding, hen or stag party, theatrical or fancy dress
+Have fun and enjoy your party with this charming eye mask
+Material: plastic, lace and feather
+
+-Our courier will charge extra $5 for any re-delivery. So please let us know if the parcel can be left at safe place to avoid any charge for re-delivery. Thanks.
+
+-GST Invoice will be provided IF REQUIRED.
+-For Delivery Address, NO PO BOX. Thanks
+
+Any problem, pls feel free to contact. Please give us the chance to solve all problems before leaving any negative feedback. thanks heaps.
+    </p>
+  </div>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-card no-padding no-margin class="no-border-radius segment-card">
+      <ion-tab-button class="segment-item" tab="category">
+        <ion-icon name="CART" (click)="gotToCat()"></ion-icon>
+          <ion-label>ADD TO CART</ion-label>
+      </ion-tab-button>
+      <ion-tab-button class="segment-item1" tab="contact">
+          <ion-icon name="checkmark-circle"></ion-icon>
+          <ion-label>BUY NOW</ion-label>
+      </ion-tab-button>
+      </ion-card>
+  </ion-toolbar>
+</ion-footer>
