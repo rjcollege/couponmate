@@ -1,5 +1,8 @@
-.back{
+.white{
   color:white;
+}
+.fs-25{
+  font-size: 25px;
 }
 .header{
   --background: #ec3237 !important;
@@ -14,24 +17,24 @@
 .desc-title{
   font-weight: 700;
 }
-.segment-card {
-  display: flex;
-  overflow-x: scroll;
-  border: 0 !important;
-  box-shadow: none !important;
-  border: none !important;
-  border-style: none !important;
-  // margin: 10px 0%;
-  border-radius: 0px;
+// .segment-card {
+//   display: flex;
+//   overflow-x: scroll;
+//   border: 0 !important;
+//   box-shadow: none !important;
+//   border: none !important;
+//   border-style: none !important;
+//   // margin: 10px 0%;
+//   border-radius: 0px;
   .segment-item {
       display: inline-block !important;
       min-width: 100px !important;
       width: auto !important;
       background: blue;
-      color:white;
+      color:white !important;
   }
   .segment-item1{
     background: green;
-    color:white;
+    color:white !important;
   }
-}
+// }
