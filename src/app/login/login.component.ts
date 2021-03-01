@@ -11,13 +11,14 @@ export class LoginComponent implements OnInit {
   email: any;
   password: any;
   loginData: Object;
-
+  isActiveToggleTextPassword: Boolean = true;
   constructor(private route: Router, private api: ApiService,) { }
 
   ngOnInit() {}
 
   goToRegister(){
-    this.route.navigate(['/register']);
+   this.route.navigate(['/register']);
+  // console.log("here");
   }
 
   goToForgotpwd(){
@@ -25,13 +26,17 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    let promise = new Promise((res,rej) => {
       this.api.login(this.email,this.password).subscribe(
       data => {
        if((data[0]['status']==2)){
         this.route.navigate(['/home']);
        }
       })
-    })
   }
+  public toggleTextPassword(): void{
+    this.isActiveToggleTextPassword = (this.isActiveToggleTextPassword==true)?false:true;
+}
+public getType() {
+    return this.isActiveToggleTextPassword ? 'password' : 'text';
+}
 }
