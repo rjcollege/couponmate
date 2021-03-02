@@ -21,6 +21,8 @@
     "@angular/router": "~11.2.0",
     "@ionic-native/http": "^5.31.1",
     "@ionic/angular": "^5.0.0-rc.3",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "rxjs": "^6.6.6",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -74,5 +76,17 @@
     "platforms": [
       "android"
     ]
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false,
+    "crypto": false,
+    "stream": false,
+    "http": false,
+    "tls": false,
+    "zlib": false,
+    "https": false,
+    "net": false
   }
 }

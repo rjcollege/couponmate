@@ -10,7 +10,10 @@ export class ApiService {
 
   public login(email,password){
    // console.log(email,password);
-    return this.http.get(environment.apiURL+'login.php?username='+email+'&password='+password);
+    return this.http.get(environment.apiURL+'loginapp.php?username='+email+'&password='+password);
   }
 
+  public getcategory_data(){
+    return this.http.get(environment.apiURL+'getcategory_data.php');
+  }
 }

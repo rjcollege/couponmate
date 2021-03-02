@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {ApiService} from './../api.service';
+import * as bcrypt from 'bcryptjs';
 
 @Component({
   selector: 'app-login',
@@ -28,8 +29,19 @@ export class LoginComponent implements OnInit {
   login() {
       this.api.login(this.email,this.password).subscribe(
       data => {
-       if((data[0]['status']==2)){
-        this.route.navigate(['/home']);
+        console.log(data);
+       if((data[0]['status']==1)){
+        var verify= bcrypt.compareSync(this.password,data[0]['password']); 
+          //console.log(hash,"hash",data[0]['password'],"pwd",verify,"verify")
+          if(verify){
+            this.route.navigate(['/home']);
+          }
+          else{
+            alert("Invalid Password");
+          }
+       }
+       else{
+        alert(data[0]['msg']);
        }
       })
   }
