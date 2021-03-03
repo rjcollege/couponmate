@@ -23,7 +23,7 @@ const routes: Routes = [
     loadChildren: () => import('./product-list/product-list-routing.module').then( m => m.ProductListPageRoutingModule)
   },
   {
-    path: 'category',
+    path: 'sidemenu',
     loadChildren: () => import('./sidemenu/sidemenu-routing.module').then( m => m.SidemenuPageRoutingModule)
   },
   {
@@ -39,6 +39,11 @@ const routes: Routes = [
     path: 'product-details',
     loadChildren: () => import('./product-details/product-details-routing.module').then( m => m.ProductDetailsPageRoutingModule)
   },
+  {
+    path: 'category',
+    loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
+  },
+
 
 ];
 

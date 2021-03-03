@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" class="back" (click)="gotToBack()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="tile" *ngIf="dataflag">
+    <ion-row>
+      <ion-col col-4 *ngFor="let cat of categories">
+    <div class="category">
+    <img src="assets/icon/beauty.jpg" (click)="gotToBeauty()">
+    <ion-card-content >
+      <ion-card-title class="title">
+       {{cat.name}}
+        </ion-card-title>
+    </ion-card-content>
+  </div>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-content>
