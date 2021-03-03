@@ -1,17 +1,11 @@
 .logo{
-  width: 30%;
+  width: 40%;
   height: 30%;
   padding-top: 2%;
   
 }
 .head_icons{
   padding-left: 35%;
-}
-.icons1{
-  padding-left: 3%;
-  font-size: 24px;
-  padding-top: 1%;
-  color:crimson;
 }
 .segment-card {
   display: flex;
@@ -24,7 +18,7 @@
   border-radius: 0px;
   .segment-item {
       display: inline-block !important;
-      min-width: 100px !important;
+     // min-width: 100px !important;
       width: auto !important;
      // background: #0E69B1;
       //color:white;
@@ -39,16 +33,16 @@ ion-slides {
 }
 .icons1{
   font-size: 20px;
-  color: white;
+ // color: white;
   padding-left: 9%;
   padding-right: 9%;
 }
 ion-footer{
   height: 50px !important;
 }
-.footer{
-  --background: #ec3237 !important;
-}
+// .footer{
+//   --background: #B8E2FC !important;
+// }
 ion-menu-button,ion-title{
   color: white;
 }
@@ -62,4 +56,10 @@ ion-menu-button,ion-title{
 
 .icon{
   height: 40px;
+}
+.center{
+  text-align: center !important;
+}
+ion-header,ion-title{
+  background-color: #B8E2FC;
 }

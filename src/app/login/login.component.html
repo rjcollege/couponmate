@@ -2,28 +2,28 @@
   <form #form="ngForm" (ngSubmit)="login(form)">
     <ion-grid>
       <ion-row justify-content-center>
-        <img src="/assets/icon/logo.png" class="logo">
+      <img src="/assets/icon/logo.png" class="logo">
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
           <div text-center>
-            <h1>Login</h1>
+            <h1>Login here!</h1>
           </div>
           <div padding>
             <div style="padding-bottom: 4%;">
             <ion-item>
-              <ion-icon name="person-circle-outline" color="danger"></ion-icon>
+              <ion-icon name="person-circle-outline" class="white"></ion-icon>
               <ion-input name="email" type="email" [(ngModel)]="email" required ></ion-input>
             </ion-item>
           </div>
           <div style="padding-bottom: 4%;">
             <ion-item>
-              <ion-icon name="lock-closed-outline" color="danger"></ion-icon>
+              <ion-icon name="lock-closed-outline" class="white"></ion-icon>
               <ion-input name="password" type="password" [(ngModel)]="password" required [type]="getType()"></ion-input>
-        <ion-icon name="eye" item-right (click)="toggleTextPassword()"></ion-icon>
+              <ion-icon name="eye" item-right (click)="toggleTextPassword()" class="white"></ion-icon>
             </ion-item>
             </div>
           </div>
           <div padding>
-            <ion-button size="large"  [disabled]="form.invalid" expand="block" (click)="login()">Login</ion-button>
+            <ion-button size="large" expand="block" (click)="login()">Login</ion-button>
           </div>
           <div class="bottom">
           <span class="forgot_pass" style="padding-left: 2%" (click)="goToRegister()">Register as a new User</span>

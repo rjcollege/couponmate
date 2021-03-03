@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    if(this.email !=undefined && this.password !=undefined){
       this.api.login(this.email,this.password).subscribe(
       data => {
         console.log(data);
@@ -44,6 +45,10 @@ export class LoginComponent implements OnInit {
         alert(data[0]['msg']);
        }
       })
+    }
+    else{
+      alert("Please Enter Username and Password");
+    }
   }
   public toggleTextPassword(): void{
     this.isActiveToggleTextPassword = (this.isActiveToggleTextPassword==true)?false:true;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import {ApiService} from './../api.service';
 
 @Component({
@@ -13,6 +13,7 @@ export class HomePage implements OnInit{
     speed: 400
   };
   category: Object;
+  maincategory: any[];
   constructor(private route: Router,private api: ApiService) {}
 
   ngOnInit(){
@@ -20,7 +21,12 @@ export class HomePage implements OnInit{
   }
 
   gotToCat(){
-    this.route.navigate(['/category']);
+    // let navigationExtras: NavigationExtras = {
+    //   queryParams: {
+    //     category: JSON.stringify(this.maincategory)
+    //   }
+    // };
+    this.route.navigate(['/category']);//, navigationExtras
   }
  
   gotoBeauty(){
@@ -30,6 +36,7 @@ export class HomePage implements OnInit{
     this.api.getcategory_data().subscribe(
       (data :any[] )=> {
         console.log(data);
+      //  this.maincategory = data;
         this.category = data;
         var count = data.length;
         for(let i=0;i<count;i++){
@@ -39,6 +46,8 @@ export class HomePage implements OnInit{
           this.category[i]['name'] = get_name1[0]; 
           var get_name2 = this.category[i]['name'].split(',');
           this.category[i]['name'] = get_name2[0]; 
+          var get_name3 = this.category[i]['name'].split(' ');
+          this.category[i]['name'] = get_name3[0];
         }
       })
   }

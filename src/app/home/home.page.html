@@ -1,35 +1,24 @@
-<ion-header class="header" style="background: blue;">
+<ion-header class="header">
   <ion-toolbar>
-    <!-- <ion-title> -->
-    <img src="/assets/icon/C_logo.png" class="logo" style="background: blue;">
-    <!-- </ion-title> -->
+    <ion-title class="center">
+    <img src="/assets/icon/logo.png" class="logo">
+    </ion-title>
   </ion-toolbar>
   <ion-searchbar></ion-searchbar>
-</ion-header>
-<ion-content class="container">
+
   <ion-card no-padding no-margin class="no-border-radius segment-card" (click)="gotToCat()">
     <ion-tab-button class="segment-item" tab="category">
-      <ion-icon name="reorder-three-outline" ></ion-icon>
+      <!-- <ion-icon name="reorder-three-outline" ></ion-icon> -->
+      <img src="assets/icon/list.png" class="icon">
         <ion-label>Categories</ion-label>
     </ion-tab-button>
     <ion-tab-button class="segment-item" tab="contact" *ngFor = "let categories of category">
-        <!-- <ion-icon name="tv"></ion-icon> -->
         <img [src]="categories.icon" class="icon"/>
         <ion-label text-wrap>{{categories.name}}</ion-label>
     </ion-tab-button>
-    <!-- <ion-tab-button class="segment-item" tab="settings">
-      <ion-icon name="car"></ion-icon>
-        <ion-label>Automobile</ion-label>
-    </ion-tab-button> -->
-    <!-- <ion-tab-button class="segment-item" tab="settings">
-      <ion-icon name="fitness"></ion-icon>
-      <ion-label>Fitness</ion-label>
-  </ion-tab-button> -->
-  <!-- <ion-tab-button class="segment-item" tab="settings">
-    <ion-icon name="rose"></ion-icon>
-    <ion-label>Outdoor</ion-label>
-</ion-tab-button> -->
 </ion-card>
+</ion-header>
+<ion-content class="container">
   <ion-slides pager="true" [options]="slideOpts">
     <ion-slide>
       <ion-img src="assets/icon/rest.jpg"></ion-img>
@@ -47,8 +36,8 @@
 
 <ion-footer>
   <ion-toolbar class="footer">
-    <ion-icon name="cart" class="icons1"></ion-icon>
-    <ion-icon name="heart" class="icons1"></ion-icon>
+    <ion-icon name="cart" class="icons1" ></ion-icon>
+    <ion-icon name="heart" class="icons1" ></ion-icon>
     <ion-icon name="person" class="icons1"></ion-icon>
     <ion-icon name="home" class="icons1"></ion-icon>
   </ion-toolbar>

@@ -6,12 +6,24 @@ ion-item{
 }
 .register_btn{
   text-align: center;
-    padding-top: 10%;
+  padding-top: 10%;
 }
 h1{
   text-align: center;
-  color:red;
+  color:black;
+  font-weight: 700;
 }
 ion-toolbar{
   text-align:center;
+  --background: #0d73bc !important;
+}
+ion-title{
+  color:white;
+}
+ion-button{
+  --background: #0d73bc !important;
+}
+ion-content{
+  --ion-background-color:#B8E2FC;
+  //#F08080;
 }

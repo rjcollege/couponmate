@@ -1,15 +1,14 @@
 
 ion-button{
-  --background:red;
+  --background:#0d73bc;
 }
 h1{
   text-align: center;
-  color:red;
+  font-weight: 800;
+  //color:red;
 }
 .forgot_pass{
-  // padding-left: 60%;
- // text-decoration: underline;
-  color: blue;
+  font-weight: 500;
 }
 .logo{
   padding-left: 15%;
@@ -26,5 +25,13 @@ ion-item{
   padding-top: 5%;
 }
 ion-content{
-  --ion-background-color:#e2e2e2;
+  --ion-background-color:#B8E2FC;
+  //#F08080;
 }
+.white{
+  color:black;
+}
+// ion-content{
+//   background-image: url("/assets/icon/logo.png");
+//   background-color: blue;
+// }

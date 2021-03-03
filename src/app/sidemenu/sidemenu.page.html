@@ -7,22 +7,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-grid class="tile">
+<ion-grid class="tile" *ngIf="dataflag">
   <ion-row>
     <ion-col col-4>
-<!-- <ion-card class="card"> -->
   <div class="category">
   <img src="assets/icon/beauty.jpg" (click)="gotToBeauty()">
-  <ion-card-content>
+  <ion-card-content *ngFor="let cat of categories">
     <ion-card-title class="title">
-      Beuaty,Spa & Massage
+     {{cat.name}}
       </ion-card-title>
   </ion-card-content>
-<!-- </ion-card> -->
 </div>
 </ion-col>
 <ion-col col-4>
-  <!-- <ion-card class="card"> -->
     <div class="category">
     <img src="assets/icon/rest.jpg" style="padding:2px"/>
     <ion-card-content>
@@ -30,11 +27,9 @@
        Restaurant & Bar
         </ion-card-title>
     </ion-card-content>
-  <!-- </ion-card> -->
 </div>
   </ion-col>
 <ion-col col-4>
-<!-- <ion-card class="card"> -->
   <div  class="category">
   <img src="assets/icon/fitness.jpg"/>
   <ion-card-content>
@@ -42,13 +37,11 @@
      Fitness & Outdoor
       </ion-card-title>
   </ion-card-content>
-<!-- </ion-card> -->
 </div>
 </ion-col>
 </ion-row>
 <ion-row>
   <ion-col col-4>
-<!-- <ion-card class="card"> -->
 <div class="category">
 <img src="assets/icon/Optimized-deal.jpg"/>
 <ion-card-content>
@@ -56,11 +49,9 @@
    Local Deal & Store
     </ion-card-title>
 </ion-card-content>
-<!-- </ion-card> -->
 </div>
 </ion-col>
 <ion-col col-4>
-<!-- <ion-card class="card"> -->
   <div class="category">
   <img src="assets/icon/images.jpg" style="padding:2px"/>
   <ion-card-content>
@@ -68,11 +59,9 @@
      Gateaway-Escape
       </ion-card-title>
   </ion-card-content>
-<!-- </ion-card> -->
 </div>
 </ion-col>
 <ion-col col-4>
-<!-- <ion-card class="card"> -->
 <div  class="category">
 <img src="assets/icon/images.jpg"/>
 <ion-card-content>
@@ -80,13 +69,11 @@
    House & Garden
     </ion-card-title>
 </ion-card-content>
-<!-- </ion-card> -->
 </div>
 </ion-col>
 </ion-row>
 <ion-row>
   <ion-col col-4>
-<!-- <ion-card class="card"> -->
 <div  class="category">
 <img src="assets/icon/elec.jpg"/>
 <ion-card-content>
@@ -94,11 +81,9 @@
    Electronics
     </ion-card-title>
 </ion-card-content>
-<!-- </ion-card> -->
 </div>
 </ion-col>
 <ion-col col-4>
-<!-- <ion-card class="card"> -->
   <div  class="category">
   <img src="assets/icon/automobile.jpg" style="padding:2px"/>
   <ion-card-content>
@@ -106,7 +91,6 @@
      Automobile
       </ion-card-title>
   </ion-card-content>
-<!-- </ion-card> -->
 </div>
 </ion-col>
 <ion-col col-4></ion-col>

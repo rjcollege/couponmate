@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
+import {ApiService} from './../api.service';
 
 @Component({
   selector: 'app-sidemenu',
@@ -7,12 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidemenu.page.scss'],
 })
 export class SidemenuPage implements OnInit {
+  categories: any;
+  dataflag:boolean = false;
  
-  constructor(private route:Router) { 
-    
+  constructor(private route:Router, private activatedRoute:ActivatedRoute, private api:ApiService) { 
+   
   }
 
   ngOnInit() {
+    // this.activatedRoute.queryParams.subscribe(params => {
+    //   if (params && params.category) {
+    //     this.categories = JSON.parse(params.category);
+    //     console.log(this.categories)
+    //   }
+    // });
+      this.getcategory_data();
     
   }
   gotToBeauty(){
@@ -20,5 +30,14 @@ export class SidemenuPage implements OnInit {
   }
   gotToBack(){
     this.route.navigate(['/home']);
+  }
+
+  getcategory_data(){
+    this.api.getcategory_data().subscribe(
+      (data :any[] )=> {
+        console.log(data);
+        this.categories = data;
+        this.dataflag = true;
+      });
   }
 }
