@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import {ApiService} from './../api.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomePage implements OnInit{
   };
   category: Object;
   maincategory: any[];
-  constructor(private route: Router,private api: ApiService) {}
+  constructor(private route: Router,private api: ApiService,public navCtrl: NavController) {}
 
   ngOnInit(){
     this.getcategory_data();
@@ -29,9 +30,9 @@ export class HomePage implements OnInit{
     this.route.navigate(['/category']);//, navigationExtras
   }
  
-  gotoBeauty(){
-    this.route.navigate(['/beauty']);
-  }
+  // gotoBeauty(){
+  //   this.route.navigate(['/beauty']);
+  // }
   getcategory_data(){
     this.api.getcategory_data().subscribe(
       (data :any[] )=> {
@@ -50,5 +51,15 @@ export class HomePage implements OnInit{
           this.category[i]['name'] = get_name3[0];
         }
       })
+  }
+  gotosubcat(name,sub_cat){
+    console.log("here");
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+          category: JSON.stringify(sub_cat),
+          name:name
+      }
+  };
+  this.navCtrl.navigateForward(['sub-cat'],navigationExtras);
   }
 }

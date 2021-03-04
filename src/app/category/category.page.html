@@ -11,7 +11,7 @@
   <ion-grid class="tile" *ngIf="dataflag">
     <ion-row>
       <ion-col size="4" *ngFor="let cat of categories" (click)="gotToSubCategory(cat.sub_cat,cat.name)">
-    <img src="assets/icon/beauty.jpg" >
+    <img [src]="cat.image">
     <ion-card-content >
       <ion-card-title class="title">
        {{cat.name}}
