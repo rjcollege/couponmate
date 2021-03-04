@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/category" class="back"  (click)="gotoHome()"></ion-back-button>
     </ion-buttons>
-    <ion-title style="padding-left: initial" class="back">Beauty Spa & Massage
+    <ion-title style="padding-left: initial" class="back">{{this.name}}
      &nbsp;&nbsp;&nbsp; <ion-icon name="cart" style="padding-top: 2%;"></ion-icon>
     </ion-title>
   </ion-toolbar>
@@ -12,24 +12,24 @@
   <ion-content class="card-background-page">
     <ion-grid>
       <ion-row>
-        <ion-col col-4>
+        <ion-col size="4" *ngFor="let sub_cat of subcategory">
           <div class="container">
             <img src="assets/icon/jwellery.jpg" alt="Snow" style="width:100%;">
-            <div class="centered">Jwellery & Watches</div>
+            <div class="centered">{{sub_cat.name}}</div>
           </div>
     </ion-col>
-      <ion-col col-4>
+      <!-- <ion-col col-4>
         <div class="container">
           <img src="assets/icon/jwellery.jpg" alt="Snow" style="width:100%;">
           <div class="centered">Spa & Massage</div>
         </div>
-  </ion-col>
-    <ion-col col-4>
+  </ion-col> -->
+    <!-- <ion-col col-4>
       <div class="container">
         <img src="assets/icon/jwellery.jpg" alt="Snow" style="width:100%;">
         <div class="centered">Salon & Products</div>
       </div>
-    </ion-col>
+    </ion-col> -->
     </ion-row>
   </ion-grid>
   

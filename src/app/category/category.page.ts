@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute,NavigationExtras } from '@angular/router';
 import {ApiService} from './../api.service';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-category',
   templateUrl: './category.page.html',
@@ -11,15 +11,22 @@ export class CategoryPage implements OnInit {
   categories: any;
   dataflag:boolean = false;
   
-  constructor(private route:Router, private activatedRoute:ActivatedRoute, private api:ApiService) { 
+  constructor(private route:Router, private activatedRoute:ActivatedRoute, private api:ApiService,public navCtrl: NavController) { 
   }
 
   ngOnInit() {
     this.getcategory_data();
   }
 
-  gotToBeauty(){
-    this.route.navigate(['/beauty']);
+  gotToSubCategory(sub_cat,name){
+    console.log("here");
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+          category: JSON.stringify(sub_cat),
+          name:name
+      }
+  };
+  this.navCtrl.navigateForward(['sub-cat'],navigationExtras);
   }
   gotToBack(){
     this.route.navigate(['/home']);

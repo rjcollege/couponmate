@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { BeautyPage } from './beauty.page';
+import { SubCatPage } from './sub-cat.page';
 
-describe('BeautyPage', () => {
-  let component: BeautyPage;
-  let fixture: ComponentFixture<BeautyPage>;
+describe('SubCatPage', () => {
+  let component: SubCatPage;
+  let fixture: ComponentFixture<SubCatPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BeautyPage ],
+      declarations: [ SubCatPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BeautyPage);
+    fixture = TestBed.createComponent(SubCatPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

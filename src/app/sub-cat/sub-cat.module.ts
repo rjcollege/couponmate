@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BeautyPageRoutingModule } from './beauty-routing.module';
+import { SubCatPageRoutingModule } from './sub-cat-routing.module';
 
-import { BeautyPage } from './beauty.page';
+import { SubCatPage } from './sub-cat.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BeautyPageRoutingModule
+    SubCatPageRoutingModule
   ],
-  declarations: [BeautyPage]
+  declarations: [SubCatPage]
 })
-export class BeautyPageModule {}
+export class SubCatPageModule {}

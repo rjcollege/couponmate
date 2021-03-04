@@ -20,11 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'product-list',
-    loadChildren: () => import('./product-list/product-list-routing.module').then( m => m.ProductListPageRoutingModule)
-  },
-  {
-    path: 'sidemenu',
-    loadChildren: () => import('./sidemenu/sidemenu-routing.module').then( m => m.SidemenuPageRoutingModule)
+    loadChildren: () => import('./product-list/product-list.module').then( m => m.ProductListPageModule)
   },
   {
     path: '',
@@ -32,17 +28,18 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'beauty',
-    loadChildren: () => import('./beauty/beauty-routing.module').then( m => m.BeautyPageRoutingModule)
-  },
-  {
     path: 'product-details',
-    loadChildren: () => import('./product-details/product-details-routing.module').then( m => m.ProductDetailsPageRoutingModule)
+    loadChildren: () => import('./product-details/product-details.module').then( m => m.ProductDetailsPageModule)
   },
   {
     path: 'category',
     loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
   },
+  {
+    path: 'sub-cat',
+    loadChildren: () => import('./sub-cat/sub-cat.module').then( m => m.SubCatPageModule)
+  },
+
 
 
 ];
