@@ -16,4 +16,10 @@ export class ApiService {
   public getcategory_data(){
     return this.http.get(environment.apiURL+'getcategory_data.php');
   }
+  public getproductbycat_id(id){
+    return this.http.get(environment.apiURL+'getproductbycat_id.php?cat_id='+id);
+  }
+  public getproductbyprod_id(id){
+    return this.http.get(environment.apiURL+'getproductbyprod_id.php?prod_id='+id);
+  }
 }

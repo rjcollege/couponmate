@@ -7,124 +7,24 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-grid class="tile">
+<ion-grid class="ion-no-padding tile">
   <ion-row>
-    <ion-col col-6>
-<ion-card class="card" (click)="gotoDetails()">
-  <img src="assets/icon/chmois.jpg"/>
-  <ion-card-content>
-    <ion-card-title class="title">
-      MOTHERS WAX ON WAX CLOTH
+    <ion-col size="6" *ngFor="let product of products" class="cell-class">
+<ion-card class="card" >
+  <ion-icon name="heart-circle-outline" class="right"  (click)="addToFav(product[0])" [ngClass]="{'red': product[0]['active']}"></ion-icon>
+  <ion-img [src]="product[0]['image_url']" style="height: 100px;" (click)="getproductbyprod_id(product[0]['id'])"></ion-img>
+  <ion-card-content (click)="getproductbyprod_id(product[0]['id'])">
+    <ion-card-title class="title" style="height: 30px;">
+      {{product[0]['title']}} 
       </ion-card-title>
-    <p class="cost">
-      $8.00
+    <p class="cost" style="padding-top: 16px;">
+      ${{product[0]['regular_price']}} 
     </p>
+    <p *ngIf="product[0]['stock_availability']=='in_stock'">In Stock</p>
     <p>
-      <ion-icon name="cart-outline" class="icons"></ion-icon>
-      <ion-icon name="heart-outline" class="icons"></ion-icon>
-      <ion-icon name="reorder-two-outline" class="icons"></ion-icon>
-      <ion-icon name="eye-outline" class="icons"></ion-icon>
+      <ion-button size="small" color="secondary">Add To Cart</ion-button>
     </p>
   </ion-card-content>
-</ion-card>
-</ion-col>
-<ion-col col-6>
-<ion-card class="card">
-  <img src="assets/icon/chmois.jpg"/>
-  <ion-card-content>
-    <ion-card-title>
-      MOTHERS WAX ON WAX CLOTH
-      </ion-card-title>
-    <p class="cost">
-      $8.00
-    </p>
-    <p>
-      <ion-icon name="cart-outline" class="icons"></ion-icon>
-      <ion-icon name="heart-outline" class="icons"></ion-icon>
-      <ion-icon name="reorder-two-outline" class="icons"></ion-icon>
-      <ion-icon name="eye-outline" class="icons"></ion-icon>
-    </p>
-  </ion-card-content>
-</ion-card>
-</ion-col>
-</ion-row>
-  <ion-row>
-    <ion-col col-6>
-<ion-card class="card">
-  <img src="assets/icon/chmois.jpg"/>
-  <ion-card-content>
-    <ion-card-title>
-      MOTHERS WAX ON WAX CLOTH
-      </ion-card-title>
-    <p class="cost">
-      $8.00
-    </p>
-    <p>
-      <ion-icon name="cart-outline" class="icons"></ion-icon>
-      <ion-icon name="heart-outline" class="icons"></ion-icon>
-      <ion-icon name="reorder-two-outline" class="icons"></ion-icon>
-      <ion-icon name="eye-outline" class="icons"></ion-icon>
-    </p>
-  </ion-card-content>
-</ion-card>
-</ion-col>
-<ion-col col-6>
-<ion-card class="card">
-  <img src="assets/icon/chmois.jpg"/>
-  <ion-card-content>
-    <ion-card-title>
-      MOTHERS WAX ON WAX CLOTH
-      </ion-card-title>
-    <p class="cost">
-      $8.00
-    </p>
-    <p>
-      <ion-icon name="cart-outline" class="icons"></ion-icon>
-      <ion-icon name="heart-outline" class="icons"></ion-icon>
-      <ion-icon name="reorder-two-outline" class="icons"></ion-icon>
-      <ion-icon name="eye-outline" class="icons"></ion-icon>
-    </p>
-  </ion-card-content>
-</ion-card>
-</ion-col>
-</ion-row>
-<ion-row>
-  <ion-col col-6>
-<ion-card class="card">
-<img src="assets/icon/chmois.jpg"/>
-<ion-card-content>
-  <ion-card-title>
-    MOTHERS WAX ON WAX CLOTH
-    </ion-card-title>
-  <p class="cost">
-    $8.00
-  </p>
-  <p>
-    <ion-icon name="cart-outline" class="icons"></ion-icon>
-    <ion-icon name="heart-outline" class="icons"></ion-icon>
-    <ion-icon name="reorder-two-outline" class="icons"></ion-icon>
-    <ion-icon name="eye-outline" class="icons"></ion-icon>
-  </p>
-</ion-card-content>
-</ion-card>
-</ion-col>
-<ion-col col-6>
-<ion-card class="card">
-<img src="assets/icon/chmois.jpg"/>
-<ion-card-content>
-  <ion-card-title>
-    MOTHERS WAX ON WAX CLOTH
-    </ion-card-title>
-  <p class="cost">
-    $8.00
-  </p>
-  <p>
-    <ion-icon name="cart-outline" class="icons"></ion-icon>
-    <ion-icon name="heart-outline" class="icons"></ion-icon>
-    <ion-icon name="reorder-two-outline" class="icons"></ion-icon>
-    <ion-icon name="eye-outline" class="icons"></ion-icon>
-  </p>
-</ion-card-content>
 </ion-card>
 </ion-col>
 </ion-row>

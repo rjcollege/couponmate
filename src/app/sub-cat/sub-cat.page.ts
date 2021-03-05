@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router,ActivatedRoute} from '@angular/router';
+import {Router,ActivatedRoute, NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'app-sub-cat',
@@ -24,7 +24,13 @@ export class SubCatPage implements OnInit {
   gotoHome(){
     this.route.navigate(['/home']);
   }
-  gotoList(){
-    this.route.navigate(['/product-details']);
+ 
+  getproductbycat_id(id){
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        cat_id: id
+      }
+    };
+    this.route.navigate(['product-list'], navigationExtras);
   }
 }
