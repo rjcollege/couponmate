@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router,ActivatedRoute, NavigationExtras} from '@angular/router';
 import { ApiService } from '../api.service';
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-product-details',
@@ -15,7 +16,7 @@ export class ProductDetailsPage implements OnInit {
   desc: any;
   url: any;
 
-  constructor(private route:Router, private activatedRoute:ActivatedRoute, private api:ApiService) { }
+  constructor(private route:Router, private activatedRoute:ActivatedRoute, private api:ApiService, private ds: DomSanitizer) { }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
@@ -30,8 +31,9 @@ export class ProductDetailsPage implements OnInit {
         this.title=this.product[0]['title'];
         this.price = this.product[0]['price'];
         this.desc = this.product[0]['content'];
+        this.desc  = this.ds.bypassSecurityTrustHtml(this.desc);
         this.url = this.product[0]['image_url'];
-        console.log(this.product,this.product[0]['title']);
+        console.log(this.product,this.product[0]['title'],this.desc);
       });
     }
   gotoList(){

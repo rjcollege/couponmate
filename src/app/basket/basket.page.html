@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col size="8">
+      <h4>WALL STICKERS</h4>
+      <h4><b>$13.00</b></h4>
+      <div>Delivery By Tuesday</div>
+    </ion-col>
+      <ion-col size="4">
+        <img src="assets/icon/beauty.jpg">
+        <ion-label>Qty</ion-label>
+        <ion-select value="Qty" okText="Okay" cancelText="Dismiss">
+          <ion-select-option value="Qty">1</ion-select-option>
+          <ion-select-option value="blonde">2</ion-select-option>
+          <ion-select-option value="black">3</ion-select-option>
+          <ion-select-option value="red">4</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 style="border: 1px solid lightgray;">
+    <ion-tab-button tab="category" color="primary">
+      <ion-icon name="download-outline" (click)="gotToCat()" class="white"></ion-icon>
+        <ion-label class="white">Save for later</ion-label>
+    </ion-tab-button>
+  </ion-col>
+  <ion-col col-6 style="border: 1px solid lightgray;">
+    <ion-tab-button  tab="contact"  color="secondary">
+        <ion-icon name="trash-outline" class="white"></ion-icon>
+        <ion-label class="white">Delete</ion-label>
+    </ion-tab-button>
+  </ion-col>
+  </ion-row>
+
+  
+      <h5>PRICE DETAILS</h5>
+      <div>
+      <span>Price(1 item)</span>
+      <span>$49</span>
+    </div>
+    <div>
+      <span><b>Total Amount</b></span>
+      <span><b>$49</b></span>
+    </div>
+</ion-grid>
+</ion-content>

@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'sub-cat',
     loadChildren: () => import('./sub-cat/sub-cat.module').then( m => m.SubCatPageModule)
+  },  {
+    path: 'basket',
+    loadChildren: () => import('./basket/basket.module').then( m => m.BasketPageModule)
   },
+
 
 
 
