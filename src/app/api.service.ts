@@ -9,10 +9,12 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   public login(email,password){
-   // console.log(email,password);
     return this.http.get(environment.apiURL+'loginapp.php?username='+email+'&password='+password);
   }
 
+  public register(dname,uname,email,password,confirm,secret){
+    return this.http.get(environment.apiURL+'register.php?dname='+dname+'&uname='+uname+'&email='+email+'&password='+password+'&confirm='+confirm+'&secret='+secret);
+  }
   public getcategory_data(){
     return this.http.get(environment.apiURL+'getcategory_data.php');
   }
