@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       alert("Please Enter Username and Password");
     }
   }
-  public toggleTextPassword(): void{
+public toggleTextPassword(): void{
     this.isActiveToggleTextPassword = (this.isActiveToggleTextPassword==true)?false:true;
 }
 public getType() {

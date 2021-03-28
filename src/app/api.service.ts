@@ -11,9 +11,11 @@ export class ApiService {
   public login(email,password){
     return this.http.get(environment.apiURL+'loginapp.php?username='+email+'&password='+password);
   }
-
   public register(dname,uname,email,password,confirm,secret){
     return this.http.get(environment.apiURL+'register.php?dname='+dname+'&uname='+uname+'&email='+email+'&password='+password+'&confirm='+confirm+'&secret='+secret);
+  }
+  public forgot(email){
+    return this.http.get(environment.apiURL+'forgot.php?email='+email);
   }
   public getcategory_data(){
     return this.http.get(environment.apiURL+'getcategory_data.php');
