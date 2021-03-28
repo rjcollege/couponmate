@@ -17,6 +17,10 @@ export class ApiService {
   public forgot(email){
     return this.http.get(environment.apiURL+'forgot.php?email='+email);
   }
+  public getuser_data(userid){
+    console.log(userid);
+    return this.http.get(environment.apiURL+'getuserdetailsbyid.php?userid='+userid);  
+  }
   public getcategory_data(){
     return this.http.get(environment.apiURL+'getcategory_data.php');
   }

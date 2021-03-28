@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'basket',
     loadChildren: () => import('./basket/basket.module').then( m => m.BasketPageModule)
   },
+  {
+    path: 'user-profile',
+    loadChildren: () => import('./user-profile/user-profile.module').then( m => m.UserProfilePageModule)
+  },
 
 
 

@@ -30,14 +30,10 @@ export class HomePage implements OnInit{
     this.route.navigate(['/category']);//, navigationExtras
   }
  
-  // gotoBeauty(){
-  //   this.route.navigate(['/beauty']);
-  // }
   getcategory_data(){
     this.api.getcategory_data().subscribe(
       (data :any[] )=> {
         console.log(data);
-      //  this.maincategory = data;
         this.category = data;
         var count = data.length;
         for(let i=0;i<count;i++){
@@ -52,8 +48,8 @@ export class HomePage implements OnInit{
         }
       })
   }
+
   gotosubcat(name,sub_cat){
-    console.log("here");
     let navigationExtras: NavigationExtras = {
       queryParams: {
           category: JSON.stringify(sub_cat),
@@ -61,5 +57,9 @@ export class HomePage implements OnInit{
       }
   };
   this.navCtrl.navigateForward(['sub-cat'],navigationExtras);
+  }
+
+  gotToUser(){
+    this.route.navigate(['/user-profile']);//, navigationExtras
   }
 }

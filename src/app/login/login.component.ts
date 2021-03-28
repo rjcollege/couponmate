@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
 
   goToRegister(){
    this.route.navigate(['/register']);
-  // console.log("here");
   }
 
   goToForgotpwd(){
@@ -33,8 +32,8 @@ export class LoginComponent implements OnInit {
         console.log(data);
        if((data[0]['status']==1)){
         var verify= bcrypt.compareSync(this.password,data[0]['password']); 
-          //console.log(hash,"hash",data[0]['password'],"pwd",verify,"verify")
           if(verify){
+            localStorage.setItem('user_id',data[0]['id']);
             this.route.navigate(['/home']);
           }
           else{
