@@ -1,52 +1,74 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" class="back" (click)="gotToBack()"></ion-back-button>
+    </ion-buttons>
     <ion-title>My Cart</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-grid>
+<ion-grid *ngFor="let products of product;let i = index">
   <ion-row>
     <ion-col size="8">
-      <h4>WALL STICKERS</h4>
-      <h4><b>$13.00</b></h4>
+      <h4>{{products.name}}</h4>
+      <h4><b>${{products.price}}</b></h4>
       <div>Delivery By Tuesday</div>
     </ion-col>
       <ion-col size="4">
-        <img src="assets/icon/beauty.jpg">
-        <ion-label>Qty</ion-label>
-        <ion-select value="Qty" okText="Okay" cancelText="Dismiss">
-          <ion-select-option value="Qty">1</ion-select-option>
-          <ion-select-option value="blonde">2</ion-select-option>
-          <ion-select-option value="black">3</ion-select-option>
-          <ion-select-option value="red">4</ion-select-option>
-        </ion-select>
+        <img [src]="products.img">
+        <ion-icon name="remove-circle" (click)="decrement(i)" ></ion-icon>
+        {{products.qty}}
+    <ion-icon name="add-circle" (click)="increment(i)" ></ion-icon>
+      </ion-col>
+      <ion-col col-6 style="border: 1px solid lightgray;">
+        <ion-tab-button tab="category" color="primary">
+          <ion-icon name="download-outline" (click)="gotToCat()" class="white"></ion-icon>
+            <ion-label class="white">Save for later</ion-label>
+        </ion-tab-button>
+      </ion-col>
+      <ion-col col-6 style="border: 1px solid lightgray;">
+        <ion-tab-button  tab="contact"  color="secondary">
+            <ion-icon name="trash-outline" class="white"></ion-icon>
+            <ion-label class="white">Delete</ion-label>
+        </ion-tab-button>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col col-6 style="border: 1px solid lightgray;">
-    <ion-tab-button tab="category" color="primary">
-      <ion-icon name="download-outline" (click)="gotToCat()" class="white"></ion-icon>
-        <ion-label class="white">Save for later</ion-label>
-    </ion-tab-button>
-  </ion-col>
-  <ion-col col-6 style="border: 1px solid lightgray;">
-    <ion-tab-button  tab="contact"  color="secondary">
-        <ion-icon name="trash-outline" class="white"></ion-icon>
-        <ion-label class="white">Delete</ion-label>
-    </ion-tab-button>
-  </ion-col>
-  </ion-row>
+  </ion-grid>
+    <!-- <ion-row>
 
-  
-      <h5>PRICE DETAILS</h5>
-      <div>
-      <span>Price(1 item)</span>
-      <span>$49</span>
+  </ion-row> -->
+  <br>
+      <div style="border: 1px solid lightgray;border-radius: 1%;">
+      <h5 style="text-align: center;color: gray;"><b>PRICE DETAILS</b></h5>
+      <hr />
+     
+      
+      <hr class="dotted">
+      <div style="padding-bottom: 4%;">
+      <span style="padding-left: 2%;"><b>Total Amount</b></span>
+      <span style="float: right;padding-right: 2%;"><b>${{total}}</b></span>
     </div>
-    <div>
-      <span><b>Total Amount</b></span>
-      <span><b>$49</b></span>
     </div>
-</ion-grid>
+
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <!-- <ion-card no-padding no-margin class="no-border-radius segment-card"> -->
+      <ion-grid style="background:white;">
+      <ion-row>
+        <ion-col col-6 >
+      <ion-tab-button tab="category" >
+          <ion-label style="font-size: large;"><b>${{total}}</b></ion-label>
+      </ion-tab-button>
+    </ion-col>
+    <ion-col col-6 >
+      <ion-tab-button  tab="contact" (click)="SendData()">
+          <ion-button>Place Order</ion-button>
+      </ion-tab-button>
+    </ion-col>
+    </ion-row>
+    </ion-grid>
+      <!-- </ion-card> -->
+  </ion-toolbar>
+</ion-footer>

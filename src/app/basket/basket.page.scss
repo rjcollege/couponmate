@@ -47,3 +47,28 @@ ion-select::part(icon) {
   color: #971e49;
   opacity: 1;
 }
+
+ion-toolbar{
+  --background: #0d73bc !important;
+}
+ion-menu-button,ion-title{
+  color: white;
+}
+ion-back-button{
+  color: white;
+}
+.height{
+height: 200px;
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dotted {
+  border:none;
+  border-top:1px dashed lightgray;
+  color:#fff;
+  background-color:#fff;
+}

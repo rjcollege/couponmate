@@ -15,8 +15,24 @@ export class ProductDetailsPage implements OnInit {
   price: any;
   desc: any;
   url: any;
-
+  id: any;
+  productArray : any=[];
+  private currentNumber = 1;
+  index: number;
+  qtyindex: any;
   constructor(private route:Router, private activatedRoute:ActivatedRoute, private api:ApiService, private ds: DomSanitizer) { }
+  private increment () {
+    this.currentNumber++;
+  }
+  
+  private decrement () {
+    if(this.currentNumber == 1){
+      this.currentNumber = 1
+    }
+    else{
+    this.currentNumber--;
+    }
+  }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
@@ -28,6 +44,7 @@ export class ProductDetailsPage implements OnInit {
     this.api.getproductbyprod_id(this.prod_id).subscribe(
       (data :any[] )=> {
         this.product = data;
+        this.id=this.product[0]['id'];
         this.title=this.product[0]['title'];
         this.price = this.product[0]['price'];
         this.desc = this.product[0]['content'];
@@ -39,5 +56,33 @@ export class ProductDetailsPage implements OnInit {
   gotoList(){
     this.route.navigate(['/product-list']);
   }
+  gotobasket(){
+  if(localStorage.getItem('product')!== null){
+    this.productArray = JSON.parse(localStorage.getItem('product'));
+    console.log(this.productArray);
+    for(let i=0; i < this.productArray.length;i++){
+      if(this.productArray[i]['id'] == this.id){
+        this.index = i;
+        this.qtyindex = this.productArray[i]['qty'];
+      }
+    }
+    if(this.index >= 0){
+    this.productArray[this.index]['qty'] = this.currentNumber + parseInt(this.qtyindex);
+    }
+    else{
+    this.productArray.push({"id":this.id, "name": this.title,"price":this.price, "qty":this.currentNumber,'img':this.url}); 
+    } 
+    localStorage.setItem('product', JSON.stringify(this.productArray));  
+    console.log(this.productArray);
+  }
+  else{
+    this.productArray.push({"id":this.id, "name": this.title,"price":this.price, "qty":this.currentNumber,'img':this.url});  
+    console.log(localStorage.setItem('product', this.productArray));
+    localStorage.setItem('product', JSON.stringify(this.productArray));  
+   
+  }
+  this.route.navigate(['/basket']);
+  }
+
 
 }

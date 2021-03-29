@@ -21,6 +21,9 @@
    <h5 style="text-align: center;
    color: gray;
    font-weight: 700">${{price}}</h5>
+  <ion-icon name="remove-circle" (click)="decrement()" ></ion-icon>
+    {{currentNumber}}
+    <ion-icon name="add-circle" (click)="increment()" ></ion-icon>
   <div class="desc">
     <p class="desc-title">PRODUCT DESCRIPTION:</p>
     <p>desc</p>
@@ -32,8 +35,8 @@
       <ion-grid>
       <ion-row>
         <ion-col col-6 class="segment-item">
-      <ion-tab-button tab="category" color="primary">
-        <ion-icon name="CART" (click)="gotToCat()" class="white"></ion-icon>
+      <ion-tab-button tab="category" color="primary" (click)="gotobasket()">
+        <ion-icon name="CART" class="white"></ion-icon>
           <ion-label class="white">ADD TO CART</ion-label>
       </ion-tab-button>
     </ion-col>
