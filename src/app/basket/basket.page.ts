@@ -50,10 +50,10 @@ export class BasketPage implements OnInit {
     user: this.userid,
     product: JSON.parse(localStorage.getItem('product')),
     totalAmount:this.total
- }
+    }
     this.api.buynow(postData).subscribe(
     (data :any[] )=> {
-      console.log("hi")
+      console.log("hi");
     });
       
   }
