@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home" class="back" (click)="gotToBack()"></ion-back-button>
+      <ion-back-button  class="back" (click)="gotToBack()"></ion-back-button>
     </ion-buttons>
     <ion-title>My Cart</ion-title>
   </ion-toolbar>
@@ -22,13 +22,13 @@
     <ion-icon name="add-circle" (click)="increment(i)" ></ion-icon>
       </ion-col>
       <ion-col col-6 style="border: 1px solid lightgray;">
-        <ion-tab-button tab="category" color="primary">
-          <ion-icon name="download-outline" (click)="gotToCat()" class="white"></ion-icon>
+        <ion-tab-button tab="category" color="primary" (click)="savelater(i)">
+          <ion-icon name="download-outline"  class="white"></ion-icon>
             <ion-label class="white">Save for later</ion-label>
         </ion-tab-button>
       </ion-col>
       <ion-col col-6 style="border: 1px solid lightgray;">
-        <ion-tab-button  tab="contact"  color="secondary">
+        <ion-tab-button  tab="contact"  color="secondary" (click)="deleteitem(i)">
             <ion-icon name="trash-outline" class="white"></ion-icon>
             <ion-label class="white">Delete</ion-label>
         </ion-tab-button>
@@ -39,18 +39,47 @@
 
   </ion-row> -->
   <br>
-      <div style="border: 1px solid lightgray;border-radius: 1%;">
+      <div style="border: 1px solid lightgray;border-radius: 1%;" *ngIf="product.length > 0">
       <h5 style="text-align: center;color: gray;"><b>PRICE DETAILS</b></h5>
       <hr />
-     
-      
       <hr class="dotted">
       <div style="padding-bottom: 4%;">
       <span style="padding-left: 2%;"><b>Total Amount</b></span>
       <span style="float: right;padding-right: 2%;"><b>${{total}}</b></span>
     </div>
     </div>
-
+    <hr />
+    <div style="padding-left:2%" *ngIf="saveproductArray && saveproductArray.length >0">
+    <h3><b>Saved For Later</b></h3>
+    <hr />
+  </div>
+    <ion-grid *ngFor="let products of saveproductArray;let i = index">
+      <ion-row>
+        <ion-col size="8">
+          <h4>{{products.name}}</h4>
+          <h4><b>${{products.price}}</b></h4>
+        </ion-col>
+          <ion-col size="4">
+            <img [src]="products.img">
+           <p>
+            Quantity: {{products.qty}}
+            </p>
+          </ion-col>
+          <ion-col col-6 style="border: 1px solid lightgray;">
+            <ion-tab-button tab="category" color="primary" (click)="movetocart(i)">
+              <ion-icon name="download-outline"  class="white"></ion-icon>
+                <ion-label class="white">Move to Cart</ion-label>
+            </ion-tab-button>
+          </ion-col>
+          <ion-col col-6 style="border: 1px solid lightgray;">
+            <ion-tab-button  tab="contact"  color="secondary" (click)="deletelater(i)">
+                <ion-icon name="trash-outline" class="white"></ion-icon>
+                <ion-label class="white">Delete</ion-label>
+            </ion-tab-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <lable *ngIf="product.length== 0 && saveproductArray.length == 0">Cart is Empty</lable>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
