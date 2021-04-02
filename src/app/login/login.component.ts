@@ -15,7 +15,12 @@ export class LoginComponent implements OnInit {
   isActiveToggleTextPassword: Boolean = true;
   constructor(private route: Router, private api: ApiService,) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  var user_id =localStorage.getItem('user_id');
+  if(user_id){
+    this.route.navigate(['/home']); 
+  }
+  }
 
   goToRegister(){
    this.route.navigate(['/register']);
