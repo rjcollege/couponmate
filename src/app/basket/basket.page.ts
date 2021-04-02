@@ -63,6 +63,7 @@ export class BasketPage implements OnInit {
     this.api.buynow(postData).subscribe(
     (data :any[] )=> {
      if(data[0]['status'] == 1){
+       localStorage.setItem('product','');
        alert("Add To cart Successfully");
        this.router.navigate(['/congratulations']);
      }

@@ -21,6 +21,7 @@ export class ProductDetailsPage implements OnInit {
   index: number;
   qtyindex: any;
   userid: string;
+  baskettotal: number;
   
   constructor(private route: Router, private activatedRoute: ActivatedRoute, private api: ApiService) { }
   private increment() {
@@ -41,7 +42,11 @@ export class ProductDetailsPage implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       this.prod_id = params['prod_id'];
     });
-    this.getproductbyprod_id()
+    this.getproductbyprod_id();
+    var baskettotal = JSON.parse(localStorage.getItem('product'));
+    if(baskettotal && baskettotal.length > 0){
+      this.baskettotal = baskettotal.length;
+    }
   }
   getproductbyprod_id() {
     this.api.getproductbyprod_id(this.prod_id).subscribe(
@@ -91,15 +96,19 @@ export class ProductDetailsPage implements OnInit {
   }
 
   buynow(){
+    var product = [];
+    product.push({ "id": this.id, "name": this.title, "price": this.price, "qty": this.currentNumber, 'img': this.url });
+    localStorage.setItem('productbuy', JSON.stringify(product));
     let postData =  {
       user: this.userid,
-      product: ({ "id": this.id, "name": this.title, "price": this.price, "qty": this.currentNumber, 'img': this.url }),
+      product: JSON.parse(localStorage.getItem('productbuy')),
       totalAmount:this.price
       }
       this.api.buynow(postData).subscribe(
       (data :any[] )=> {
        if(data[0]['status'] == 1){
          alert("Add To cart Successfully");
+         localStorage.setItem('productbuy','');
          this.route.navigate(['/home']);
        }
        else{
