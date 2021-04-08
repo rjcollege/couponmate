@@ -21,7 +21,7 @@ export class ProductDetailsPage implements OnInit {
   index: number;
   qtyindex: any;
   userid: string;
-  baskettotal: number;
+  baskettotal: any;
   
   constructor(private route: Router, private activatedRoute: ActivatedRoute, private api: ApiService) { }
   private increment() {
@@ -43,10 +43,13 @@ export class ProductDetailsPage implements OnInit {
       this.prod_id = params['prod_id'];
     });
     this.getproductbyprod_id();
-    var baskettotal = JSON.parse(localStorage.getItem('product'));
-    if(baskettotal && baskettotal.length > 0){
-      this.baskettotal = baskettotal.length;
-    }
+    // var baskettotal = JSON.parse(localStorage.getItem('product'));
+    // if(baskettotal && baskettotal.length > 0){
+    //   this.baskettotal = baskettotal.length;
+    // }
+    // console.log(baskettotal);
+    var baskettotal = localStorage.getItem('baskettotal');
+    this.baskettotal = baskettotal;
   }
   getproductbyprod_id() {
     this.api.getproductbyprod_id(this.prod_id).subscribe(

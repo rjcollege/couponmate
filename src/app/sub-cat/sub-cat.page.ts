@@ -9,6 +9,7 @@ import {Router,ActivatedRoute, NavigationExtras} from '@angular/router';
 export class SubCatPage implements OnInit {
   name: any;
   subcategory: any;
+  baskettotal: any;
 
   constructor(private route:Router,private activatedRoute: ActivatedRoute) { }
   
@@ -19,6 +20,10 @@ export class SubCatPage implements OnInit {
       this.subcategory = JSON.parse(params["category"]);
       console.log(this.name,this.subcategory)
   });
+  var baskettotal = JSON.parse(localStorage.getItem('product'));
+  if(baskettotal && baskettotal.length > 0){
+    this.baskettotal = baskettotal.length;
+  }
   }
   
   gotoHome(){

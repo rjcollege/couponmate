@@ -14,20 +14,28 @@ export class BasketPage implements OnInit {
   price: any;
   total :any =0;
   userid: string;
-  saveproductArray: any =[];
+  saveproductArray: any;
   index: number;
   qtyindex: any;
+  show:boolean = false;
   constructor(private api:ApiService, private router:Router) { }
 
   ngOnInit() {
     this.userid = localStorage.getItem('user_id');
     this.product = JSON.parse(localStorage.getItem('product'));
     this.saveproductArray = JSON.parse(localStorage.getItem('saveproduct'));
-    for(let i=0; i< this.product.length;i++){
-      this.total = parseFloat(this.total+(this.product[i]['qty']* this.product[i]['price'])).toFixed(2);
+    if(this.saveproductArray && this.saveproductArray.length > 0){
+      this.show = true;
     }
-   
+    if(this.product && this.product.length >0){
+    for(let i=0; i< this.product.length;i++){
+      this.total = this.total+(this.product[i]['qty']* this.product[i]['price']);
+    }
+    this.total = parseFloat(this.total).toFixed(2);
+    console.log(this.total);
   }
+  
+}
   private decrement (index) {
     this.total = 0;
     if(this.product[index]['qty'] == 1){
@@ -39,8 +47,9 @@ export class BasketPage implements OnInit {
       
     }
     for(let i=0; i< this.product.length;i++){
-      this.total = parseFloat(this.total+(this.product[i]['qty']* this.product[i]['price'])).toFixed(2);
+      this.total =this.total+(this.product[i]['qty']* this.product[i]['price']);
     }
+    this.total = parseFloat(this.total).toFixed(2);
     localStorage.setItem('product', JSON.stringify(this.product)); 
     
   }
@@ -50,8 +59,9 @@ export class BasketPage implements OnInit {
     this.product[index]['qty']++;
     
     for(let i=0; i< this.product.length;i++){
-      this.total = parseFloat(this.total+(this.product[i]['qty']* this.product[i]['price'])).toFixed(2);
+      this.total = this.total+(this.product[i]['qty']* this.product[i]['price']);
     }
+    this.total = parseFloat(this.total).toFixed(2);
     localStorage.setItem('product', JSON.stringify(this.product)); 
   }
   SendData(){
@@ -78,8 +88,9 @@ export class BasketPage implements OnInit {
     this.product=JSON.parse(localStorage.getItem('product'));
     this.product.splice(index, 1);
     for(let i=0; i< this.product.length;i++){
-      this.total = parseFloat(this.total+(this.product[i]['qty']* this.product[i]['price'])).toFixed(2);
+      this.total = this.total+(this.product[i]['qty']* this.product[i]['price']);
     }
+    this.total = parseFloat(this.total).toFixed(2);
     localStorage.setItem('product', JSON.stringify(this.product));
   }
 
@@ -114,8 +125,9 @@ export class BasketPage implements OnInit {
     }
     this.product.splice(index, 1);
     for(let i=0; i< this.product.length;i++){
-      this.total =parseFloat(this.total+(this.product[i]['qty']* this.product[i]['price'])).toFixed(2);
+      this.total =this.total+(this.product[i]['qty']* this.product[i]['price']);
     }
+    this.total = parseFloat(this.total).toFixed(2);
     localStorage.setItem('product', JSON.stringify(this.product));
    
   }

@@ -62,4 +62,9 @@ export class HomePage implements OnInit{
   gotToUser(){
     this.route.navigate(['/user-profile']);//, navigationExtras
   }
+  logout(){
+   // localStorage.clear();
+    //localStorage.setItem('user_id','');
+    //this.route.navigate(['/login']);
+  }
 }

@@ -49,7 +49,7 @@
     </div>
     </div>
     <hr />
-    <div style="padding-left:2%" *ngIf="saveproductArray && saveproductArray.length >0">
+    <div style="padding-left:2%" *ngIf="show">
     <h3><b>Saved For Later</b></h3>
     <hr />
   </div>
@@ -79,7 +79,7 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      <lable *ngIf="product.length== 0 && saveproductArray.length == 0">Cart is Empty</lable>
+      <label *ngIf="product && saveproductArray && product.length== 0 && saveproductArray.length == 0">Cart is Empty</label>
 </ion-content>
 <ion-footer>
   <ion-toolbar>

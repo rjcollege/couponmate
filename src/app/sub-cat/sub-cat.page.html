@@ -4,8 +4,12 @@
       <ion-back-button defaultHref="/category" class="back"  (click)="gotoHome()"></ion-back-button>
     </ion-buttons>
     <ion-title class="back">{{this.name}}</ion-title>
-    <ion-buttons slot="end"> <ion-icon name="cart" ></ion-icon></ion-buttons>
-  </ion-toolbar>
+    <ion-buttons slot="end" [routerLink]="['/basket']">
+      <ion-icon name="cart" class="white fs-25">          
+      </ion-icon>
+      <ion-badge color="danger">{{baskettotal}}</ion-badge>
+     </ion-buttons>
+     </ion-toolbar>
 </ion-header>
 <h5 class="pd-3">Shop By Categories</h5>
   <ion-content class="card-background-page">
