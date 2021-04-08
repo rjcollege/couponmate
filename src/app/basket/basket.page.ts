@@ -24,9 +24,14 @@ export class BasketPage implements OnInit {
     this.userid = localStorage.getItem('user_id');
     this.product = JSON.parse(localStorage.getItem('product'));
     this.saveproductArray = JSON.parse(localStorage.getItem('saveproduct'));
-    if(this.saveproductArray && this.saveproductArray.length > 0){
-      this.show = true;
+    console.log(this.saveproductArray);
+    if(this.saveproductArray !== null ){
+      console.log("here");
+      if(this.saveproductArray.length > 0){
+        this.show = true;
+      }
     }
+
     if(this.product && this.product.length >0){
     for(let i=0; i< this.product.length;i++){
       this.total = this.total+(this.product[i]['qty']* this.product[i]['price']);

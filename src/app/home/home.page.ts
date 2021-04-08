@@ -19,6 +19,7 @@ export class HomePage implements OnInit{
 
   ngOnInit(){
     this.getcategory_data();
+ 
   }
 
   gotToCat(){

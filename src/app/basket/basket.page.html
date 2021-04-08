@@ -39,7 +39,7 @@
 
   </ion-row> -->
   <br>
-      <div style="border: 1px solid lightgray;border-radius: 1%;" *ngIf="product.length > 0">
+      <div style="border: 1px solid lightgray;border-radius: 1%;" *ngIf="product && product.length > 0">
       <h5 style="text-align: center;color: gray;"><b>PRICE DETAILS</b></h5>
       <hr />
       <hr class="dotted">
@@ -93,7 +93,7 @@
     </ion-col>
     <ion-col col-6 >
       <ion-tab-button  tab="contact" (click)="SendData()">
-          <ion-button>Place Order</ion-button>
+          <ion-button>Place Order </ion-button>
       </ion-tab-button>
     </ion-col>
     </ion-row>
