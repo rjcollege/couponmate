@@ -35,18 +35,31 @@ export class ProductListPage implements OnInit {
     this.route.navigate(['/home']);
   }
   getproductbycat_id(){
-    this.api.getproductbycat_id(this.cat_id).subscribe(
+    var user_id = localStorage.getItem('user_id');
+    this.api.getproductbycat_id(this.cat_id,user_id).subscribe(
       (data :any[] )=> {
         this.products = data;
         var count =  data.length;
         for(let i = 0;i<count;i++){
+        if(this.products[i][0]['like'] == '1'){
+        this.products[i][0]['active'] = true;
+        }
+        else{
         this.products[i][0]['active'] = false;
+        }
         }
         console.log(this.products);
       });
-    }    
-      addToFav(product){
+  }    
+  
+  addToFav(product){
+      console.log(product);
       product['active']=!product['active'];
-     }
+      var user_id = localStorage.getItem('user_id');
+      this.api.favourite(product['id'],product['active'],user_id).subscribe(
+        data => {
+          console.log(data);
+        })
+  }
    
 }

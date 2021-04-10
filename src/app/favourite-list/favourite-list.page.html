@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button  class="back" (click)="history.go(-1)" style="color: white;"></ion-back-button>
     </ion-buttons>
-    <ion-title style="padding-left: initial" class="back">Product List
+    <ion-title style="padding-left: initial" class="back">Favourite List
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,16 +11,15 @@
   <ion-row>
     <ion-col size="6" *ngFor="let product of products" class="cell-class">
 <ion-card class="card" >
-  <ion-icon name="heart-circle-outline" class="right"  (click)="addToFav(product[0])" [ngClass]="{'red': product[0]['active']}"></ion-icon>
-  <ion-img [src]="product[0]['image_url']" style="height: 100px;" (click)="getproductbyprod_id(product[0]['id'])"></ion-img>
-  <ion-card-content (click)="getproductbyprod_id(product[0]['id'])">
+  <ion-img [src]="product['image_url']" style="height: 100px;" (click)="getproductbyprod_id(product['prodid'])"></ion-img>
+  <ion-card-content (click)="getproductbyprod_id(product['prodid'])">
     <ion-card-title class="title" style="height: 30px;">
-      {{product[0]['title']}} 
+      {{product['title']}} 
       </ion-card-title>
     <p class="cost" style="padding-top: 16px;">
-      ${{product[0]['regular_price']}} 
+      ${{product['regular_price']}} 
     </p>
-    <p *ngIf="product[0]['stock_availability']=='in_stock'">In Stock</p>
+    <p *ngIf="product['stock_availability']=='in_stock'">In Stock</p>
     <p>
       <ion-button size="small" color="secondary">Add To Cart</ion-button>
     </p>

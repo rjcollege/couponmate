@@ -25,8 +25,8 @@ export class ApiService {
   public getcategory_data(){
     return this.http.get(environment.apiURL+'getcategory_data.php');
   }
-  public getproductbycat_id(id){
-    return this.http.get(environment.apiURL+'getproductbycat_id.php?cat_id='+id);
+  public getproductbycat_id(id,user_id){
+    return this.http.get(environment.apiURL+'getproductbycat_id.php?cat_id='+id+'&user_id='+user_id);
   }
   public getproductbyprod_id(id){
     return this.http.get(environment.apiURL+'getproductbyprod_id.php?prod_id='+id);
@@ -34,5 +34,11 @@ export class ApiService {
   public buynow(param){
     console.log(param);
     return this.http.post(environment.apiURL+'buynow.php', param);   
+  }
+  public favourite(prodid,status,userid){
+    return this.http.get(environment.apiURL+'favourite.php?prod_id='+prodid+'&status='+status+'&userid='+userid);
+  }
+  public getfavourite_prod(userid){
+    return this.http.get(environment.apiURL+'getfavourite_prod.php?userid='+userid);
   }
 }

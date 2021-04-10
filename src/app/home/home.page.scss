@@ -63,3 +63,15 @@ ion-menu-button,ion-title{
 ion-header,ion-title{
   background-color: #B8E2FC;
 }
+ion-toolbar{
+  --background: #0d73bc !important;
+}
+ion-menu-button,ion-title{
+  color: white;
+}
+.icons1{
+  font-size: 20px;
+  color: white;
+  padding-left: 9%;
+  padding-right: 9%;
+}

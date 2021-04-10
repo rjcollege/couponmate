@@ -50,6 +50,10 @@ const routes: Routes = [
     path: 'congratulations',
     loadChildren: () => import('./congratulations/congratulations.module').then( m => m.CongratulationsPageModule)
   },
+  {
+    path: 'favourite-list',
+    loadChildren: () => import('./favourite-list/favourite-list.module').then( m => m.FavouriteListPageModule)
+  },
 
 
 
