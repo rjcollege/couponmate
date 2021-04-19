@@ -9,3 +9,5 @@ Cordova reference documentation:
 
 
 npm i sweetalert2 //https://codezup.com/angular-7-8-9-10-popup-notification-using-sweetalert2/
+
+npm install --save ngx-ui-loader //https://www.npmjs.com/package/ngx-ui-loader/v/6.0.0
